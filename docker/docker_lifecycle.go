@@ -53,7 +53,7 @@ var _ = DockerDescribe("Docker Application Lifecycle", func() {
 			).Should(Exit(0))
 		})
 
-		It("retains its start command through starts and stops", func() {
+		FIt("retains its start command through starts and stops", func() {
 			Eventually(helpers.CurlingAppRoot(Config, appName)).Should(Equal("0"))
 			Eventually(helpers.CurlApp(Config, appName, "/name")).Should(Equal(appName))
 
